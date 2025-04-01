@@ -3,7 +3,7 @@ const User = require("../../../Model/UserModel.js");
 async function signup(req, res) {
   try {
     const { userName, email, Password } = req.body;
-    if (!userName || !email || !password) {
+    if (!userName || !email || !Password) {
       return res.statrus(400).json({ message: " all fields are required" });
     }
     const existingUser = await User.findOne({ email });
