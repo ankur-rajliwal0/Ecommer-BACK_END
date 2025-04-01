@@ -12,6 +12,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+  orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
+  wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
 });
 
 UserSchema.pre("save", async function (next) {
