@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const UserSchema = new mongoose.Schema({
   userName: {
     type: String,
@@ -8,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Password: {
+  password: {
     type: String,
     required: true,
   },
